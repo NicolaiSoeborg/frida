@@ -605,7 +605,7 @@ gn:
 
 build/fs-tmp-%/gn/build.ninja: build/fs-env-%.rc gn
 	. $< \
-		&& CC="$$CC" CXX="$$CXX" python gn/build/gen.py \
+		&& CC="$$CC" CXX="$$CXX" $(PYTHON3) gn/build/gen.py \
 			--out-path $(abspath $(@D))
 
 build/fs-tmp-%/gn/gn: build/fs-tmp-%/gn/build.ninja
